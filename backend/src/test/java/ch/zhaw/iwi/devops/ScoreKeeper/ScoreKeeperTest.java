@@ -41,4 +41,12 @@ public class ScoreKeeperTest {
         Score.scoreTeamB2();
         Assertions.assertEquals("Stump 002:002 Moser", Score.getScore());
     }
+    @Test
+    public void ScoreKeeper_Moser3_Stump2() {
+
+        ScoreKeeper Score = new ScoreKeeper();
+        Score.scoreTeamA2();
+        Score.scoreTeamB3();
+        Assertions.assertEquals("Stump 002:003 Moser", Score.getScore());
+    }
 }
