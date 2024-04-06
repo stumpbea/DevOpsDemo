@@ -7,6 +7,9 @@ public class ScoreKeeper {
     String B = "Moser";
 
 
+    void TeamNameA(String A1){
+        A = A1;
+    }
     void TeamNameB(String B1){
         B = B1;
     }
