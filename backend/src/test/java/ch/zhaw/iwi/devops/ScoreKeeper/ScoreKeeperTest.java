@@ -67,4 +67,18 @@ public class ScoreKeeperTest {
         Score.scoreTeamB1();
         Assertions.assertEquals("Stump 003:006 Moser", Score.getScore());
     }
+    @Test
+    public void ScoreKeeper_Moser6_Stump11() {
+
+        ScoreKeeper Score = new ScoreKeeper();
+        Score.scoreTeamA3();
+        Score.scoreTeamB3();
+        Score.scoreTeamB2();
+        Score.scoreTeamB1();
+        Score.scoreTeamA3();
+        Score.scoreTeamA2();
+        Score.scoreTeamA2();
+        Score.scoreTeamA1();
+        Assertions.assertEquals("Stump 011:006 Moser", Score.getScore());
+    }
 }
