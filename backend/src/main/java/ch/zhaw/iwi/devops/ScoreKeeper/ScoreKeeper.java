@@ -14,7 +14,7 @@ public class ScoreKeeper {
         a=a+2;
     }
     void scoreTeamA3(){
-
+        a=a+3;
     }
     void scoreTeamB1(){
         b++;
