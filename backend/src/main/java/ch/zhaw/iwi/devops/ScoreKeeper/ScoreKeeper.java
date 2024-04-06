@@ -20,7 +20,7 @@ public class ScoreKeeper {
         b++;
     }
     void scoreTeamB2(){
-
+        b=b+2;
     }
     void scoreTeamB3(){
 
