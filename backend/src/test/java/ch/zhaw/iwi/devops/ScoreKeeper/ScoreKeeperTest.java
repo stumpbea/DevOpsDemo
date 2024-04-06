@@ -90,4 +90,13 @@ public class ScoreKeeperTest {
         Score.scoreTeamB3();
         Assertions.assertEquals("Stump 003:003 TeamMoser", Score.getScore());
     }
+    @Test
+    public void ScoreKeeper_TeamMoser3_TeamStump3() {
+
+        ScoreKeeper Score = new ScoreKeeper();
+        Score.TeamNameA("TeamStump");
+        Score.scoreTeamA3();
+        Score.scoreTeamB3();
+        Assertions.assertEquals("TeamStump 003:003 TeamMoser", Score.getScore());
+    }
 }
