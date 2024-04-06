@@ -23,7 +23,7 @@ public class ScoreKeeper {
         b=b+2;
     }
     void scoreTeamB3(){
-
+        b=b+3;
     }
     String getScore(){
         return A + " " + String.format("%03d", a) + ":" + String.format("%03d", b) + " " + B;
