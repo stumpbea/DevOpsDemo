@@ -95,6 +95,7 @@ public class ScoreKeeperTest {
 
         ScoreKeeper Score = new ScoreKeeper();
         Score.TeamNameA("TeamStump");
+        Score.TeamNameB("TeamMoser");
         Score.scoreTeamA3();
         Score.scoreTeamB3();
         Assertions.assertEquals("TeamStump 003:003 TeamMoser", Score.getScore());
