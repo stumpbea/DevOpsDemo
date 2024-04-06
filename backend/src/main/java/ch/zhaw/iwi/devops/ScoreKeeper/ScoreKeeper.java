@@ -26,6 +26,6 @@ public class ScoreKeeper {
 
     }
     String getScore(){
-        return A + " " + String.valueOf(a) + ":" + String.valueOf(b) + " " + B;
+        return A + " " + String.format("%03d", a) + ":" + String.format("%03d", b) + " " + B;
     }   
 }
