@@ -1,37 +1,37 @@
-package ch.zhaw.iwi.devops.ScoreKeeper;
+package ch.zhaw.iwi.devops.scorekeeper;
 
 public class ScoreKeeper {
-    int a = 0;
-    int b = 0;
-    String A = "Stump";
-    String B = "Moser";
+    int scoreA = 0;
+    int scoreB = 0;
+    String teamA = "Stump";
+    String teamB = "Moser";
 
 
-    void TeamNameA(String A1){
-        A = A1;
+    void teamNameA(String teamA1){
+        teamA = teamA1;
     }
-    void TeamNameB(String B1){
-        B = B1;
+    void teamNameB(String teamB1){
+        teamB = teamB1;
     }
     void scoreTeamA1(){
-        a++;
+        scoreA++;
     }
     void scoreTeamA2(){
-        a=a+2;
+        scoreA=scoreA+2;
     }
     void scoreTeamA3(){
-        a=a+3;
+        scoreA=scoreA+3;
     }
     void scoreTeamB1(){
-        b++;
+        scoreB++;
     }
     void scoreTeamB2(){
-        b=b+2;
+        scoreB=scoreB+2;
     }
     void scoreTeamB3(){
-        b=b+3;
+        scoreB=scoreB+3;
     }
     String getScore(){
-        return A + " " + String.format("%03d", a) + ":" + String.format("%03d", b) + " " + B;
+        return teamA + " " + String.format("%03d", scoreA) + ":" + String.format("%03d", scoreB) + " " + teamB;
     }   
 }

@@ -1,12 +1,13 @@
-package ch.zhaw.iwi.devops.ScoreKeeper;
+package ch.zhaw.iwi.devops.scorekeeper;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class ScoreKeeperTest {
+
+class ScoreKeeperTest {
 
     @Test
-    public void ScoreKeeper_start() {
+    void ScoreKeeper_start() {
 
         ScoreKeeper Score = new ScoreKeeper();
         Assertions.assertEquals("Stump 000:000 Moser", Score.getScore());
@@ -85,7 +86,7 @@ public class ScoreKeeperTest {
     void ScoreKeeper_TeamMoser3_Stump3() {
 
         ScoreKeeper Score = new ScoreKeeper();
-        Score.TeamNameB("TeamMoser");
+        Score.teamNameB("TeamMoser");
         Score.scoreTeamA3();
         Score.scoreTeamB3();
         Assertions.assertEquals("Stump 003:003 TeamMoser", Score.getScore());
@@ -94,8 +95,8 @@ public class ScoreKeeperTest {
     void ScoreKeeper_TeamMoser3_TeamStump3() {
 
         ScoreKeeper Score = new ScoreKeeper();
-        Score.TeamNameA("TeamStump");
-        Score.TeamNameB("TeamMoser");
+        Score.teamNameA("TeamStump");
+        Score.teamNameB("TeamMoser");
         Score.scoreTeamA3();
         Score.scoreTeamB3();
         Assertions.assertEquals("TeamStump 003:003 TeamMoser", Score.getScore());
