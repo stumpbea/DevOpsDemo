@@ -12,21 +12,21 @@ public class ScoreKeeperTest {
         Assertions.assertEquals("Stump 000:000 Moser", Score.getScore());
     }
     @Test
-    public void ScoreKeeper_Moser1() {
+    void ScoreKeeper_Moser1() {
 
         ScoreKeeper Score = new ScoreKeeper();
         Score.scoreTeamB1();
         Assertions.assertEquals("Stump 000:001 Moser", Score.getScore());
     }
     @Test
-    public void ScoreKeeper_Stump1() {
+    void ScoreKeeper_Stump1() {
 
         ScoreKeeper Score = new ScoreKeeper();
         Score.scoreTeamA1();
         Assertions.assertEquals("Stump 001:000 Moser", Score.getScore());
     }
     @Test
-    public void ScoreKeeper_Moser2_Stump1() {
+    void ScoreKeeper_Moser2_Stump1() {
 
         ScoreKeeper Score = new ScoreKeeper();
         Score.scoreTeamA1();
@@ -34,7 +34,7 @@ public class ScoreKeeperTest {
         Assertions.assertEquals("Stump 001:002 Moser", Score.getScore());
     }
     @Test
-    public void ScoreKeeper_Moser2_Stump2() {
+    void ScoreKeeper_Moser2_Stump2() {
 
         ScoreKeeper Score = new ScoreKeeper();
         Score.scoreTeamA2();
@@ -42,7 +42,7 @@ public class ScoreKeeperTest {
         Assertions.assertEquals("Stump 002:002 Moser", Score.getScore());
     }
     @Test
-    public void ScoreKeeper_Moser3_Stump2() {
+    void ScoreKeeper_Moser3_Stump2() {
 
         ScoreKeeper Score = new ScoreKeeper();
         Score.scoreTeamA2();
@@ -50,7 +50,7 @@ public class ScoreKeeperTest {
         Assertions.assertEquals("Stump 002:003 Moser", Score.getScore());
     }
     @Test
-    public void ScoreKeeper_Moser3_Stump3() {
+    void ScoreKeeper_Moser3_Stump3() {
 
         ScoreKeeper Score = new ScoreKeeper();
         Score.scoreTeamA3();
@@ -58,7 +58,7 @@ public class ScoreKeeperTest {
         Assertions.assertEquals("Stump 003:003 Moser", Score.getScore());
     }
     @Test
-    public void ScoreKeeper_Moser6_Stump3() {
+    void ScoreKeeper_Moser6_Stump3() {
 
         ScoreKeeper Score = new ScoreKeeper();
         Score.scoreTeamA3();
@@ -68,7 +68,7 @@ public class ScoreKeeperTest {
         Assertions.assertEquals("Stump 003:006 Moser", Score.getScore());
     }
     @Test
-    public void ScoreKeeper_Moser6_Stump11() {
+    void ScoreKeeper_Moser6_Stump11() {
 
         ScoreKeeper Score = new ScoreKeeper();
         Score.scoreTeamA3();
@@ -82,7 +82,7 @@ public class ScoreKeeperTest {
         Assertions.assertEquals("Stump 011:006 Moser", Score.getScore());
     }
     @Test
-    public void ScoreKeeper_TeamMoser3_Stump3() {
+    void ScoreKeeper_TeamMoser3_Stump3() {
 
         ScoreKeeper Score = new ScoreKeeper();
         Score.TeamNameB("TeamMoser");
@@ -91,7 +91,7 @@ public class ScoreKeeperTest {
         Assertions.assertEquals("Stump 003:003 TeamMoser", Score.getScore());
     }
     @Test
-    public void ScoreKeeper_TeamMoser3_TeamStump3() {
+    void ScoreKeeper_TeamMoser3_TeamStump3() {
 
         ScoreKeeper Score = new ScoreKeeper();
         Score.TeamNameA("TeamStump");
