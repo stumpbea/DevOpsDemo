@@ -101,4 +101,14 @@ class ScoreKeeperTest {
         Score.scoreTeamB3();
         Assertions.assertEquals("TeamStump 003:003 TeamMoser", Score.getScore());
     }
+    @Test
+    void ScoreKeeper_Moser1_Stump1() {
+
+        ScoreKeeper Score = new ScoreKeeper();
+        Score.scoreTeamA2();
+        Score.scoreTeamB2();
+        Score.reduceScoreTeamA1();
+        Score.reduceScoreTeamB1();
+        Assertions.assertEquals("Stump 001:001 Moser", Score.getScore());
+    }
 }
