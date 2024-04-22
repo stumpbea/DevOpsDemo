@@ -32,11 +32,11 @@ public class ScoreKeeper {
         scoreB=scoreB+3;
     }
     void reduceScoreTeamA1(){
-        scoreA-;
+        scoreA--;
     }
     void reduceScoreTeamB1(){
-        scoreB-;
-    
+        scoreB--;
+    }
     String getScore(){
         return teamA + " " + String.format("%03d", scoreA) + ":" + String.format("%03d", scoreB) + " " + teamB;
     }   
