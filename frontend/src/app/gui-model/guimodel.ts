@@ -1,9 +1,11 @@
+import { DateField } from "path-framework/app/app.module";
+
 /* tslint:disable:max-line-length */
 export class GuiModel {
 
     private _guiModel = {
         "application": {
-            "title": "DevOpsDemo FS2024",
+            "title": "DevOpsDemo FS2024 stumpbea",
             "formList": [
                 {
                     "id": "OwnUserForm",
@@ -87,6 +89,50 @@ export class GuiModel {
                         }
                     ]
                 },
+                {
+                    "id": "TasksForm",
+                    "title": { default: "Tasks" },
+                    "url": "/task",
+                    "formFieldList": [
+                        {
+                            "id":   "title",
+                            "type": "text",
+                            "name": { default: "Task-Titel" },
+                            "required": true,
+                            "width": 2
+                        },
+                        {
+                            "id": "keywords",
+                            "type": "text",
+                            "name": { default: "Keywords to list" },
+                            "newRow": true,
+                            "maxLength": 4000,
+                            "height": 4,
+                            "width": 2
+                        },
+                        {
+                            "id": "description",
+                            "type": "text",
+                            "name": { default: "Text" },
+                            "newRow": true,
+                            "maxLength": 4000,
+                            "height": 4,
+                            "width": 2
+                        },
+                        {
+                            "type": "deleteButton",
+                            "name": "Delete"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Cancel"
+                        },
+                        {
+                            "type": "okButton",
+                            "name": "Ok"
+                        }
+                    ]
+                },
             ],
             "pageList": [
                 {
@@ -104,6 +150,15 @@ export class GuiModel {
                             "icon": "fa-file-alt",
                             "color": "wet-asphalt",
                             "page": "toDoPage",
+                            "width": 2,
+                            "newRow": true,
+                        },
+                        {
+                            "type": "button",
+                            "name": { default: "Beats-Tasks" },
+                            "icon": "fa-file-alt",
+                            "color": "lime",
+                            "page": "BeatPage",
                             "width": 2,
                             "newRow": true,
                         },
@@ -134,6 +189,35 @@ export class GuiModel {
                             "url": "/todo",
                             "form": {
                                 "form": "ToDoForm"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "BeatPage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "newButton",
+                            "name": { default: "Neuer Task"},
+                            "icon": "fa-user",
+                            "color": "lime",
+                            "width": 2,
+                            "form" : {
+                                "form" : "TasksForm"
+                            }
+                        },
+                        {
+                            "type": "list",
+                            "name": "Task",
+                            "icon": "fa-user",
+                            "color": "yellow",
+                            "search": true,
+                            "url": "/task",
+                            "form": {
+                                "form": "TasksForm"
                             }
                         }
                     ]

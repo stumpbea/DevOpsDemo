@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ToDoController {
 
     private Map<Integer, ToDo> todos = new HashMap<Integer, ToDo>();
+    private Map<Integer, Task> tasks = new HashMap<Integer, Task>();
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
@@ -30,6 +31,7 @@ public class ToDoController {
         this.todos.put(3,new ToDo(3, "Unit Tests", "Neues Projekt mit Unit Tests starten"));
         this.todos.put(4,new ToDo(4, "Deployment", "Jede Woche!"));
         this.todos.put(5,new ToDo(5, "Organigramm", "Löschen"));
+        this.tasks.put(1,new Task(1, "DevOps-Exercise", "durchführen & dokumentieren", "DevOps, Exercise, Moser"));
         System.out.println("Init Data");
     }
 
@@ -87,4 +89,43 @@ public class ToDoController {
     }
 
 
+
+    @GetMapping("/services/task")
+    public List<PathListEntry<Integer>> task() {
+        var result = new ArrayList<PathListEntry<Integer>>();
+        for (var task : this.tasks.values()) {
+            var entry = new PathListEntry<Integer>();
+            entry.setKey(task.getId(), "taskKey");
+            entry.setName(task.getTitle());
+            entry.getDetails().add(task.getDescription());
+            entry.setTooltip(task.getDescription());
+            entry.getDetails().add(task.getKeywords());
+            entry.setTooltip(task.getKeywords());
+            result.add(entry);
+        }
+        return result;
+    }
+
+    @GetMapping("/services/task/{key}")
+    public Task gettask(@PathVariable Integer key) {
+        return this.tasks.get(key);
+    }
+
+    @PostMapping("/services/task")
+    public void createtask(@RequestBody Task task) {
+        var newId = this.tasks.keySet().stream().max(Comparator.naturalOrder()).orElse(0) + 1;
+        task.setId(newId);
+        this.tasks.put(newId, task);
+    }
+
+    @PutMapping("/services/task/{id}")
+    public void createtask(@PathVariable Integer id, @RequestBody Task task) {
+        task.setId(id);
+        this.tasks.put(id, task);
+    }
+
+    @DeleteMapping("/services/task/{key}")
+    public Task deletetask(@PathVariable Integer key) {
+        return this.tasks.remove(key);
+    }
 }
