@@ -103,10 +103,12 @@ class ScoreKeeperTest {
     }
     @Test
     void ScoreKeeper_Moser1_Stump1() {
+
         ScoreKeeper Score = new ScoreKeeper();
         Score.scoreTeamA2();
-        Score.scoreTeamB1();
+        Score.scoreTeamB2();
         Score.reduceScoreTeamA1();
-        Assertions.assertEquals("Stump 001:000 Moser", Score.getScore());
+        Score.reduceScoreTeamB1();
+        Assertions.assertEquals("Stump 001:001 Moser", Score.getScore());
     }
 }
