@@ -107,6 +107,6 @@ class ScoreKeeperTest {
         Score.scoreTeamA2();
         Score.scoreTeamB1();
         Score.reduceScoreTeamA1();
-        Assertions.assertEquals("Stump 001:001 Moser", Score.getScore());
+        Assertions.assertEquals("Stump 001:000 Moser", Score.getScore());
     }
 }

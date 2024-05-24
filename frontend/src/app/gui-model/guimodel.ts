@@ -5,7 +5,7 @@ export class GuiModel {
 
     private _guiModel = {
         "application": {
-            "title": "DevOpsDemo FS2024 stumpbea Demo-Vorbereitung",
+            "title": "DevOpsDemo FS2024 stumpbea Final Demo",
             "formList": [
                 {
                     "id": "OwnUserForm",
